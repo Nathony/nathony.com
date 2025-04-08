@@ -1,4 +1,41 @@
-.body {
- background-image: url('Images/fish.jpeg');
- background-repeat: repeat-y;
+body {
+    background-image: url('Images/fish.jpeg');
+    background-repeat: repeat-y;
+    background-attachment: scroll;
+    animation: moveBackground 10s linear infinite alternate;
+}
+
+footer {
+    background-color: rgba(127, 240, 255, 0.555);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-image: url("Images/taskbar.png");
+    background-color: rgba(240, 248, 255, 0.712);
+    background-size: auto 100%; /* Stretch to fit height */
+    background-repeat: repeat-x; /* Repeat along the width */
+
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow items to wrap if needed */
+    max-height: 6%;
+    padding: 0 10px; /* Add padding to prevent overflow */
+    box-sizing: border-box; /* Include padding in width/height calculations */
+}
+
+footer > * {
+    flex: 1 1 auto; /* Allow child elements to grow/shrink as needed */
+    max-width: 100%; /* Prevent child elements from exceeding the footer width */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+@keyframes moveBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 10%;
+    }
 }
